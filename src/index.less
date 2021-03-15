@@ -38,7 +38,6 @@ body {
   height: calc(100vh - 64px);
   color: rgba(255,255,255,.85);
   overflow: hidden;
-  
 }
 
 .blog-menu {
@@ -49,16 +48,32 @@ body {
 
 .blog-body {
   flex-grow: 1;
-  padding: 16px 40px;
+  padding: 16px 40px 64px 40px;
+  overflow: auto;
 }
 
 .markdown {
   max-width: 1200px;
   margin-top: 24px;
-  h1, h2, h3, h4, h5, h6 {
-    margin: 0;
+  font-size: 16px;
+  text-align: justify;
+  line-height: 1.65;
+
+  h2 {
+    font-size: 20px;
+    margin-top: 40px;
+  }
+
+  h2:first-child {
+    margin-top: 0;
+  }
+
+  h3 {
     font-size: 18px;
-    font-weight: normal;
+  }
+
+  h4 {
+    font-size: 16px;
   }
 
   pre {
@@ -69,5 +84,21 @@ body {
 
   code {
     font-family: "Fira Code";
+  }
+
+  p code {
+    margin: 0 4px;
+    padding: 0 8px;
+    border-radius: 2px;
+    background: #202020;
+  }
+
+  blockquote {
+    margin: 0;
+    margin-bottom: 8px;
+    padding: 4px 8px 4px 16px;
+    border-radius: 8px;
+    border-left: solid 6px #648dae;
+    background: #3a3a3a;
   }
 }
