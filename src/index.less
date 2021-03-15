@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  background: #303030;
+}
+
+.MuiCardMedia-img {
+  opacity: .85;
+}
+
+.layout-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.layout-header-left {
+  display: flex;
+  align-items: baseline;
+}
+
+.layout-header-title {
+  font-size: 18px !important;
+}
+
+.home {
+  min-height: 100vh;
+  background-image: url(/bg.jpg);
+  background-size: 100% 600px;
+  background-repeat: no-repeat;
+  background-color: #111;
+}
+
+.home-content {
+  padding-top: 386px;
+}
+
+.blog {
+  display: flex;
+  height: calc(100vh - 64px);
+  color: rgba(255,255,255,.85);
+  overflow: hidden;
+  
+}
+
+.blog-menu {
+  width: 240px;
+  flex-shrink: 0;
+  border-right: solid 1px rgba(255,255,255,.08);
+}
+
+.blog-body {
+  flex-grow: 1;
+  padding: 16px 40px;
+}
+
+.markdown {
+  max-width: 1200px;
+  margin-top: 24px;
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+  }
+
+  pre {
+    padding: 16px;
+    border-radius: 8px;
+    background: #262626;
+  }
+
+  code {
+    font-family: "Fira Code";
+  }
+}
