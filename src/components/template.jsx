@@ -14,7 +14,7 @@ export default function Template({ data }) {
 
   return (
     <Layout>
-      <Header />
+      <Header activeKey={frontmatter.topic} />
       <div className="blog">
         <Menu items={menuItems} activeKey={frontmatter.slug} />
         <div className="blog-content">
@@ -32,6 +32,7 @@ export const pageQuery = graphql`
       frontmatter {
         slug
         title
+        topic
       }
     }
 

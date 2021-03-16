@@ -9,7 +9,7 @@ function Menu({ items, activeKey }) {
       {items.map(it => (
         <ListItem
           key={it.title}
-          style={{ color: activeKey === it.slug ? '#648dae' : 'inherit' }}
+          className={activeKey === it.slug ? 'active' : ''}
           button
           onClick={() => navigate(it.slug)}
         >

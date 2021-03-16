@@ -7,7 +7,7 @@ import { navigate } from 'gatsby'
 
 import topics from '../topics'
 
-function Header() {
+function Header({ activeKey }) {
   return (
     <AppBar color="transparent" position="static">
       <Toolbar className="header">
@@ -22,7 +22,11 @@ function Header() {
 
         <Typography>
           {topics.map(it => (
-            <Button key={it.title} onClick={() => it.to && navigate(it.to)}>
+            <Button
+              key={it.title}
+              className={activeKey === it.key ? 'active' : ''}
+              onClick={() => it.to && navigate(it.to)}
+            >
               {it.title}
             </Button>
           ))}
