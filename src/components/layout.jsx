@@ -17,7 +17,7 @@ function Layout({ children }) {
     <MuiThemeProvider theme={theme}>
       <Helmet>
         <title>秘密花园-王小一的博客</title>
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.png" type="image/x-icon" />
       </Helmet>
       {children}
     </MuiThemeProvider>
