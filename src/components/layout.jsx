@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles'
 
 import '@fontsource/roboto'
@@ -12,7 +13,15 @@ const theme = createMuiTheme({
 })
 
 function Layout({ children }) {
-  return <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
+  return (
+    <MuiThemeProvider theme={theme}>
+      <Helmet>
+        <title>秘密花园-王小一的博客</title>
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+      </Helmet>
+      {children}
+    </MuiThemeProvider>
+  )
 }
 
 export default Layout

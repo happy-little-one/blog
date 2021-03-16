@@ -10,9 +10,9 @@ import topics from '../topics'
 function Header() {
   return (
     <AppBar color="transparent" position="static">
-      <Toolbar className="layout-header">
-        <div className="layout-header-left">
-          <Button className="layout-header-title" size="large" onClick={() => navigate('/')}>
+      <Toolbar className="header">
+        <div className="header-left">
+          <Button className="header-title" size="large" onClick={() => navigate('/')}>
             秘密花园
           </Button>
           <Typography color="textSecondary" variant="body2" component="h3">
