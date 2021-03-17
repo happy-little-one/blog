@@ -1,5 +1,6 @@
 @primary: #648dae;
 @code: #262626;
+@md: 800px;
 
 body {
   margin: 0;
@@ -30,13 +31,16 @@ body {
 
 .home {
   min-height: 100vh;
-  background-image: url(/bg.jpg);
-  background-size: 100% 600px;
-  background-repeat: no-repeat;
-  background-color: #111;
-
+  @media (min-width: @md) {
+    background-repeat: no-repeat;
+    background-image: url(/bg.jpg);
+    background-size: 100% 600px;
+  }
   &-content {
-    padding-top: 386px;
+    padding-top: 32px;
+    @media (min-width: @md) {
+      padding-top: 386px;
+    }
   }
 }
 
@@ -54,8 +58,11 @@ body {
 
   &-content {
     flex-grow: 1;
-    padding: 16px 40px 64px 40px;
+    padding: 16px;
     overflow: auto;
+    @media (min-width: @md) {
+      padding: 16px 40px 64px 40px;
+    }
   }
 }
 

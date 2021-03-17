@@ -11,7 +11,7 @@ function ItemCard({ topic }) {
   const { title, description, to } = topic
 
   return (
-    <Grid xs={3} item>
+    <Grid xs={12} sm={6} md={4} lg={3} item>
       <Card onClick={() => to && navigate(to)}>
         <CardActionArea>
           <CardMedia

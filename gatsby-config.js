@@ -4,6 +4,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-gatsby-cloud',
+    'gatsby-plugin-material-ui',
     'gatsby-plugin-less',
     'gatsby-transformer-remark',
     {

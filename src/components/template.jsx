@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Hidden from '@material-ui/core/Hidden'
 
 import Layout from './layout'
 import Header from './header'
@@ -16,7 +17,9 @@ export default function Template({ data }) {
     <Layout>
       <Header activeKey={frontmatter.topic} />
       <div className="blog">
-        <Menu items={menuItems} activeKey={frontmatter.slug} />
+        <Hidden only={['xs', 'sm', 'md']}>
+          <Menu items={menuItems} activeKey={frontmatter.slug} />
+        </Hidden>
         <div className="blog-content">
           <div className="markdown" dangerouslySetInnerHTML={{ __html: html }} />
         </div>

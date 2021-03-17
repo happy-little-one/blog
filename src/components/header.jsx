@@ -3,6 +3,7 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
+import Hidden from '@material-ui/core/Hidden'
 import { navigate } from 'gatsby'
 
 import topics from '../topics'
@@ -20,17 +21,19 @@ function Header({ activeKey }) {
           </Typography>
         </div>
 
-        <Typography>
-          {topics.map(it => (
-            <Button
-              key={it.title}
-              className={activeKey === it.key ? 'active' : ''}
-              onClick={() => it.to && navigate(it.to)}
-            >
-              {it.title}
-            </Button>
-          ))}
-        </Typography>
+        <Hidden only={['xs', 'sm']}>
+          <Typography>
+            {topics.map(it => (
+              <Button
+                key={it.title}
+                className={activeKey === it.key ? 'active' : ''}
+                onClick={() => it.to && navigate(it.to)}
+              >
+                {it.title}
+              </Button>
+            ))}
+          </Typography>
+        </Hidden>
       </Toolbar>
     </AppBar>
   )
