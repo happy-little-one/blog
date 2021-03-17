@@ -31,13 +31,16 @@ body {
 
 .home {
   min-height: 100vh;
+  background-repeat: no-repeat;
+  background-image: url(/bg-sm.jpg);
+  background-size: 100% auto;
+  background-color: #111;
   @media (min-width: @md) {
-    background-repeat: no-repeat;
     background-image: url(/bg.jpg);
     background-size: 100% 600px;
   }
   &-content {
-    padding-top: 32px;
+    padding-top: 386px;
     @media (min-width: @md) {
       padding-top: 386px;
     }
