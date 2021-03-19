@@ -22,9 +22,15 @@ function BlogHeader({ activeTopic, menuItems, activeTitle }) {
           {activeTopic}
         </Button>
 
-        <Menu id="title-list" anchorEl={title} open={Boolean(title)}>
+        <Menu id="title-list" anchorEl={title} open={Boolean(title)} onClose={() => setTitle(null)}>
           {[{ title: '首页', key: 'home', to: '/' }, ...topics].map(it => (
-            <MenuItem key={it.key} onClick={() => it.to && navigate(it.to)}>
+            <MenuItem
+              key={it.key}
+              onClick={() => {
+                setTitle(null)
+                it.to && navigate(it.to)
+              }}
+            >
               {it.title}
             </MenuItem>
           ))}
@@ -41,9 +47,21 @@ function BlogHeader({ activeTopic, menuItems, activeTitle }) {
           {activeTitle}
         </Button>
 
-        <Menu id="blog-list" anchorEl={blog} open={Boolean(blog)}>
+        <Menu
+          id="blog-list"
+          aria-haspopup="true"
+          anchorEl={blog}
+          open={Boolean(blog)}
+          onClose={() => setBlog(null)}
+        >
           {menuItems.map(it => (
-            <MenuItem key={it.slug} onClick={() => navigate(it.slug)}>
+            <MenuItem
+              key={it.slug}
+              onClick={() => {
+                setBlog(null)
+                navigate(it.slug)
+              }}
+            >
               {it.title}
             </MenuItem>
           ))}
