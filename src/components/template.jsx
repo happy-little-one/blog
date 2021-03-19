@@ -3,23 +3,26 @@ import { graphql } from 'gatsby'
 import Hidden from '@material-ui/core/Hidden'
 
 import Layout from './layout'
-import Header from './header'
+import Header from './blog-header'
 import Menu from './menu'
 
 export default function Template({ data }) {
   const { markdownRemark, allMarkdownRemark } = data
   const { frontmatter, html } = markdownRemark
+  const { topic, slug, title } = frontmatter
 
   const { nodes } = allMarkdownRemark
   const menuItems = nodes.map(it => it.frontmatter)
 
   return (
     <Layout>
-      <Header activeKey={frontmatter.topic} />
+      <Header activeTopic={topic} activeTitle={title} menuItems={menuItems} />
+
       <div className="blog">
         <Hidden only={['xs', 'sm', 'md']}>
-          <Menu items={menuItems} activeKey={frontmatter.slug} />
+          <Menu items={menuItems} activeKey={slug} />
         </Hidden>
+
         <div className="blog-content">
           <div className="markdown" dangerouslySetInnerHTML={{ __html: html }} />
         </div>

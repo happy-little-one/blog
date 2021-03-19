@@ -10,7 +10,7 @@ import topics from '../topics'
 
 function Header({ activeKey }) {
   return (
-    <AppBar color="transparent" position="static">
+    <AppBar color="transparent">
       <Toolbar className="header">
         <div className="header-left">
           <Button className="header-title" size="large" onClick={() => navigate('/')}>
@@ -21,7 +21,7 @@ function Header({ activeKey }) {
           </Typography>
         </div>
 
-        <Hidden only={['xs', 'sm']}>
+        <Hidden only={['xs', 'sm', 'md']}>
           <Typography>
             {topics.map(it => (
               <Button
