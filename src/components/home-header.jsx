@@ -22,7 +22,7 @@ function Header({ activeKey }) {
         </div>
 
         <Hidden only={['xs', 'sm', 'md']}>
-          <Typography>
+          <div>
             {topics.map(it => (
               <Button
                 key={it.title}
@@ -32,7 +32,7 @@ function Header({ activeKey }) {
                 {it.title}
               </Button>
             ))}
-          </Typography>
+          </div>
         </Hidden>
       </Toolbar>
     </AppBar>

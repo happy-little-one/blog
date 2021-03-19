@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import Hidden from '@material-ui/core/Hidden'
 
 import Layout from './layout'
-import Header from './blog-header'
+import Header from './blog-header/index'
 import Menu from './menu'
 
 export default function Template({ data }) {
